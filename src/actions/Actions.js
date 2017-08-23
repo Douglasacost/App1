@@ -7,3 +7,11 @@ export const setState = (state) => {
         state
     };
 }
+export function setMessage() {
+    console.log("HERE")
+    return {
+      meta: {remote: true},
+      type: 'SET_MESSAGE',
+      message: "REMOTE MESSAGE"
+    };
+  }

@@ -4,7 +4,11 @@ import Components from '../common';
 let {Button, Box, Content} = Components;
 
 export default class View1 extends Component {
+    sendMessage ()  {
+        return this.props.setMessage()
+    }
     render(){
+        let sendMessage = this.sendMessage.bind(this);
         return <div className="Container">
             <Box>
             <Content>
@@ -14,7 +18,7 @@ export default class View1 extends Component {
             </Content>
             <Content>
                 <div className="Box-content--middle">
-                    <Button className="mui-btn" text="PLAY" />
+                    <Button action={sendMessage} className="mui-btn" text="PLAY" />
                     <Link to="/secondView">
                         <Button className="mui-btn" text="OK" />
                     </Link>
